@@ -1,0 +1,348 @@
+/* General  */
+*{ margin:0;
+    padding: 0;
+    box-sizing: border-box;}
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(194, 227, 199);
+    background-image: url("./recursos/360_F_239849887_xKMRLWW8RIRGqP7TVaWWX8NmgXgseF9S.png");
+    background-attachment:  fixed;
+    background-size: cover;
+}                                                                                                                                 
+header{
+    margin:20px;
+    background-color: rgb(57, 57, 57);
+}
+h2{
+    margin: 10px;
+    font-style: oblique;
+    color:#6ae99b;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    
+}
+
+
+/* Flexbox layout para cards */
+.card-container {
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content:space-between;
+}
+
+.card {
+    flex: 1 1 calc(20% - 20px);
+    max-width: calc(20% - 20px);
+    background-color: #d7e6bd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 1px 3px 5px #34362e1a;
+}
+
+.card-body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color:#000;
+   
+}
+
+.card-titulo {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    
+}
+.card-titulo span{
+   text-align: center;
+}
+.card-price {
+    padding-top: 20px;
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.btn-agregar {
+    padding: 10px 20px;
+    color: #1c1e1c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-style: italic;
+    background-color:  #74e6af;
+}
+
+.btn-agregar:hover {
+    background-color: #000000;
+}
+
+/* Carrito styles */
+.list-group {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.list-item {
+    
+    border: 2px solid #d7ff90;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px #cfef171a;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 500px;
+   /* max-width: calc(100% - 20px);*/
+    color:#0b0b0b;
+    
+}
+
+.item-cantidad, .item-titulo {
+    font-size: 1rem;
+    margin-right: 20px;
+}
+
+.item-actions {
+    display: flex;
+    gap: 20px;
+}
+.item-total{
+    margin-left: 20px;
+    font-size: 1.5rem;
+}
+.btn-quitar, .btn-agregar {
+    padding: 5px 10px;
+    background-color:#70f086;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-style: italic;
+    
+}
+.btn-agregar{
+    background-color:  #00d590;
+    color:#201e1e;
+}
+
+
+
+.btn-quitar:hover {
+    background-color:  #00375b;
+    font-weight: bold;
+    color:#ffffff;
+}
+
+
+.btn-agregar:hover {
+    background-color:  #0064b9;
+    font-weight: bold;
+    color:#ffffff;
+}
+/* Estilos para footerCarrito */
+.cardF {
+    flex: 1 1 calc(150% - 20px);
+    max-width: calc(150% - 20px);
+    border: 2px solid #d7ff90;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px #cfef171a;
+    
+    padding: 15px;
+}
+    
+  
+
+.footerCarrito-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    gap: 30px;
+   
+}
+
+.total-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.25rem;
+    margin-right: auto; /* Empuja el total a la izquierda */
+    color: #000;
+}
+
+.total-container p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.total-container span {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.btn-finalizar {
+    margin-left: 30px;
+    padding: 10px 20px;
+    background-color: #00d590;
+    color: rgb(3, 2, 2);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.btn-finalizar:hover {
+    background-color: #5f6c6d;
+}
+/* Estilos para el modal */
+.modal {
+    display: none; /* Escondido por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.modal-dialog {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header, .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-header {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0064b9;
+}
+
+.modal-body label {
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.modal-body input, .modal-body select {
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-body button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal-body button:hover {
+    background-color: #45a049;
+}
+
+
+
+.total-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-container p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.total-container span {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+/* Estilos específicos para el total */
+
+.modal-body .totalCompraMostrar {
+    font-size: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 20px;
+   
+    text-align: right;
+    color: #0a0c0a;
+    text-shadow:1px 2px #ccc;
+}
+.modal-body .totalCompraM{
+    padding-left: 5px;
+    font-size: 9px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight:bold;
+    font-style: italic;
+}
+
+#footer{
+   
+    text-align: center; 
+    padding: 10px 0;
+    border-top: 2px solid #023f08;
+    box-shadow: 10px 10px 5px 12px #393a3b;
+    position: relative; 
+}
+#footer p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #e0dee8;
+    font-size: 12px;
+    margin: 0;
+    position: relative; /* Asegura que el texto se muestre correctamente sobre el fondo */
+    z-index: 1; 
+}
+#footer p span img{
+     padding-left: 10px; /* Reduce el padding para mejorar la posición de la imagen */
+     height: 55px; /* Ajusta la altura de la imagen para que sea más visible */
+     width: auto; /* Mantén el aspecto de la imagen sin distorsionarla */
+     position: relative; /* Asegura que la imagen se muestre por encima del fondo */
+     z-index: 1; /* Coloca la imagen por encima del degradado */
+ 
+}
